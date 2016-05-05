@@ -1,0 +1,27 @@
+<ion-modal-view>
+    <div class="bar bar-header bar-calm">
+        <div class="h1 title">OTP</div>
+    </div>
+    <ion-content class="has-header">
+        <form ng-submit="doOTP()">
+            <div class="list card">
+                <div class="item item-body">
+                    <label class="item item-text-wrap">
+                        Please enter your one time password for use Application.
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">OTP</span>
+                        <input type="number" pattern="[0-9]*" placeholder="Password" ng-model="loginData.OTP">
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-block button-calm" type="button">Get New OTP</button>
+                    </div>
+                    <div class="col">
+                        <button class="button button-block button-calm" type="submit">Submit</button>
+                    </div>
+                </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,28 @@
+<ion-view>
+    <div class="bar bar-header bar-calm">
+        <a ng-click="goBack()" class="button ion-chevron-left button-clear"> Back</a>
+        <div class="h1 title">Investigations</div>
+    </div>
+    <ion-content class="has-header">
+        <div class="list card">
+            <div class="item item-avatar">
+                <div class="icon-avatar">
+                    <i class="icon ion-nuclear"></i>
+                </div>
+                <h2>{{Xray.XrayName}}</h2>
+                <p>Result Date : {{Xray.ResultDateTime}}</p>
+            </div>
+            <div class="item item-body">
+                <p>
+                    Findings:
+                </p>
+                <p>
+                    {{Xray.RichTextMemo}}
+                </p>
+                <p>
+                    {{Xray.ResultDoctor}}
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

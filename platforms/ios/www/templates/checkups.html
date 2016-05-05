@@ -1,0 +1,158 @@
+<ion-view title="CheckUp Detail">
+    <ion-content class="has-header">
+    </ion-content>
+    <ion-tabs class="tabs-icon-top tabs-calm">
+
+        <!-- Home Tab -->
+        <ion-tab title="Summary" icon="icon ion-clipboard">
+            <ion-view>
+                <ion-content class="padding">
+                    <div class="list pull-left" ng-repeat="Sum in ChkSummarys">
+                        <div class="list card">
+
+                            <div class="item item-avatar">
+                                <img src="http://203.155.165.20/healthbookP2/images/{{Data.DoctorCode}}.png">
+                                <h2>Summary (สรุปผลการตรวจสุขภาพ)</h2>
+                                <p>Date : {{Data.OpenVisitDate}}</p>
+                            </div>
+
+                            <div class="item item-body">
+
+                                <div class="row">
+                                    <pre>{{Sum.RemarksMemo}}</pre>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+
+        <!-- Friends Tab -->
+        <!-- Account Tab -->
+        <ion-tab title="VitalSign" icon="icon ion-heart">
+            <ion-view>
+
+                <ion-content class="padding">
+                    <div class="list pull-left" ng-repeat="Vit in VitalSigns">
+
+                        <div class="list card">
+
+                            <div class="item item-avatar">
+                                <div class="icon-avatar">
+                                    <i class="icon ion-heart"></i>
+                                </div>
+                                <h2>{{Vit.ResultDate}}</h2>
+                            </div>
+
+                            <div class="item item-body">
+                                
+                                    <p>
+                                        {{Vit.RemarksMemo}}
+                                    </p>
+
+                                
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <!-- Account Tab -->
+        <ion-tab title="Lab" icon="icon ion-beaker">
+            <ion-view>
+                <ion-content class="padding">
+                    <div class="list pull-left" ng-repeat="Lab in ChkLabs">
+						  
+                        <a class="item item-avatar" href="#/app/checkuplabdetails/{{Lab.Order}}">
+                            <div class="icon-avatar">
+                                <i class="icon ion-beaker"></i>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col col-100"><h2>{{Lab.Order}}</h2></div>
+                                <i class="icon ion-chevron-right"></i>
+                            </div>
+                            
+                        </a>
+                     </div>
+                        
+
+
+                    </div>
+
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <!-- Account Tab -->
+        <ion-tab title="X-Ray" icon="icon ion-nuclear">
+            <ion-view>
+                <ion-content class="padding">
+                    <div class="list pull-left" ng-repeat="Xray in ChkXrays">
+
+                        <div class="list card">
+
+                            <div class="item item-avatar">
+                                <div class="icon-avatar">
+                                    <i class="icon ion-nuclear"></i>
+                                </div>
+                                <h2>{{Xray.XrayName}}</h2>
+                                <p>Result Date : {{Xray.ResultDateTime}}</p>
+                            </div>
+
+                            <div class="item item-body">
+                                
+                                    
+                                
+                                <p>
+                                        Result:
+                                </p>
+                                <a class="item-a" href="#/app/checkupdetails/{{Xray.RequestNo}}">
+                                    <div class="row">
+                                        <div class="col col-100"> 
+                                            {{Xray.ResultMemo}}
+                                        </div>
+                                        <div class="col col-10 center"><i class="icon ion-chevron-right center"></i></div>
+                                            
+                                    </div>
+                                </a>
+                                <p>
+                                        {{Xray.ResultDoctor}}
+                                </p>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+
+    </ion-tabs>
+</ion-view>

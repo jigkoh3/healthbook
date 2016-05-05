@@ -1,0 +1,30 @@
+<ion-view>
+    <div class="bar bar-header bar-calm">
+        <a ng-click="goBack()" class="button ion-chevron-left button-clear"> Back</a>
+        <div class="h1 title">Appointment List</div>
+    </div>
+    <ion-content class="has-header">
+        <div class="list pull-left" ng-repeat="item in appointmentLists">
+            <a class="item item-avatar" href="#/appointmentDetail/{{item.AppointmentNo}}">
+                <div class="icon-avatar">
+                    <i class="icon ion-calendar"></i>
+                </div>
+                <h2>{{item.DoctorName}}</h2>
+                <div class="row">
+                    <div class="col col-50">
+                        <p>{{item.AppointDateTime}}</p>
+                    </div>
+                    <div class="col col-50">
+                        <p class="balanced">{{item.AppointmentNo}}</p>
+                    </div>
+                    <i class="icon ion-chevron-right"></i>
+                </div>
+                <div class="row">
+                    <div class="col col-100">
+                        <p>{{item.ClinicName}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

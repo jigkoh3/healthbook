@@ -1,0 +1,48 @@
+<ion-view cache-view="false">
+    <div class="bar bar-header bar-calm">
+        <a ng-click="goBack()" class="button ion-chevron-left button-clear"> Back</a>
+        <div class="h1 title">Health Book</div>
+        <a href="#/setting" class="button button-clear">
+            <i class="ion-ios-gear-outline icon"></i>
+        </a>
+    </div>
+    <ion-content class="has-header center" content scroll="false">
+        <div>
+            <img src="img/bg240px.png" alt="">
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-clear">
+    </ion-footer-bar>
+    <div class="bar bar-footer" style="height:60px;">
+        <div class="div-spec">|</div>
+        <h1 class="title">
+      <!-- <button class="button button-calm button-clear" ng-click="onRegister()">
+            <h4 class="calm" style="border:dotter;">{{label.register}}</h4>
+        </button>
+        
+        <button class="button button-clear">
+        <h4>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h4>
+        </button>
+        
+        <button class="button button-calm button-clear" ng-click="onSignin()">
+            <h4 class="calm">{{label.signin}}</h4>
+        </button> -->
+        <div class="row">
+                    <div class="col">
+                        <button class="button button-calm button-clear" ng-click="onRegister()">
+            <h4 class="calm" style="border:dotter;">{{label.register}} &nbsp;</h4>
+        </button>
+                    </div>
+                    <div class="col">
+                       <button class="button button-calm button-clear" ng-click="onSignin()">
+            <h4 class="calm"> &nbsp;{{label.signin}}</h4>
+        </button>
+                    </div>
+                </div>
+      </h1>
+    </div>
+</ion-view>

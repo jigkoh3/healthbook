@@ -1,0 +1,176 @@
+/* Empty. Add your own CSS if you like */
+.item-a {
+    text-decoration:none;
+	color:#000;
+}
+.icon-avatar {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: orange;
+    align-content: center;
+    padding-left: 11px;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: whitesmoke;
+}
+
+.div-chart {
+    margin: 20px;
+}
+
+.center {
+    padding-top: 80px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+.intro .slider {
+    height: 100%;
+}
+
+.intro .slider-slide {
+    padding-top: 80px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+.intro #logo {
+    margin: 30px 0px;
+}
+
+    .intro #logo > img {
+        max-width: 100px;
+        max-height: 100px;
+        width: 100%;
+        border-radius: 100%;
+    }
+
+.intro #list {
+    width: 170px;
+    margin: 30px auto;
+    font-size: 15px;
+}
+
+    .intro #list ol {
+        margin-top: 30px;
+    }
+
+        .intro #list ol li {
+            text-align: left;
+            list-style: decimal;
+            margin: 10px 0px;
+        }
+
+.intro .col-demo .col {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.intro .ionicons-demo li {
+    display: inline-block;
+    padding: 2px;
+    font-size: 32px;
+}
+
+.media-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .media-container iframe,
+    .media-container object,
+    .media-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.user-img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.pull-left {
+    text-align: left;
+}
+
+.agreementbox {
+    height: 100px;
+    color: #ddd;
+}
+
+
+/**
+ * Lists
+ * --------------------------------------------------
+ */
+.list {
+    position: relative;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+    .list:last-child {
+        margin-bottom: 0px;
+    }
+
+        .list:last-child.card {
+            margin-bottom: 20px;
+        }
+/**
+ * Cards and Inset Lists
+ * --------------------------------------------------
+ * A card and list-inset are close to the same thing, except a card as a box shadow.
+ */
+.card, .list-inset {
+    overflow: hidden;
+    margin: 5px 10px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.card {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+    .card .item {
+        border-left: 0;
+        border-right: 0;
+    }
+
+        .card .item:first-child {
+            border-top: 0;
+        }
+
+        .card .item:last-child {
+            border-bottom: 0;
+        }

@@ -1,0 +1,36 @@
+﻿<ion-view cache-view="false">
+    <div class="bar bar-header bar-calm">
+        <div class="h1 title">Hospital List</div>
+        <a href="#/setting" class="button button-clear">
+            <i class="ion-ios-gear-outline icon"></i>
+        </a>
+    </div>
+    <ion-content class="has-header" content scroll="false">
+        <br />
+        <div class="list pull-left" ng-repeat="item in hospitalList">
+            <a class="item item-avatar" href="#/home/{{item.authenServiceURL}}/{{item.healthbookServiceURL}}">
+                <div class="icon-avatar">
+                    <i class="icon ion-medkit"></i>
+                </div>
+                <h2>{{item.name}}</h2>
+                <div class="row">
+                    <div class="col col-50">
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col col-50">
+                        &nbsp;
+                    </div>
+                    <i class="icon ion-chevron-right"></i>
+                </div>
+                
+            </a>
+        </div>
+       
+
+    </ion-content>
+    <ion-footer-bar class="bar-clear">
+    </ion-footer-bar>
+    <div class="bar bar-footer" style="height:60px;">
+        
+    </div>
+</ion-view>

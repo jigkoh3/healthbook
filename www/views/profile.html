@@ -1,0 +1,219 @@
+<ion-view class="intro">
+    <div class="bar bar-header bar-calm">
+        <a ng-click="onProfile()" class="button button-clear">
+            <i class="ion-ios-person-outline icon"></i>
+        </a>
+        <div class="h1 title">Health Book</div>
+        <a href="#/setting" class="button button-clear">
+            <i class="ion-ios-gear-outline icon"></i>
+        </a>
+    </div>
+    <ion-content class="has-header">
+        <ion-slide-box show-pager="true" on-slide-changed="slideChanged($index)">
+            <!-- ============= slide home =========-->
+            <ion-slide>
+                <ion-view>
+                    <ion-content class="padding">
+                        <div class="list pull-left">
+                <label class="item item-input">
+                    <div class="div-center">
+                        <img ng-src="data:image/JPEG;base64,{{data.Photo}}" height="74" style="border-radius: 50%;">
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.firstName}} :</span>
+                    <span class="input-label">{{data.Name}}</span>
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.age}} :</span>
+                    <span class="input-label">{{data.AgeYear}}</span>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.lastdate}} :</span>
+                    <span class="input-label">{{data.LastVisitDate}}</span>
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.HN}} :</span>
+                    <span class="input-label">{{data.HN}}</span>
+                </label>
+                
+            </div>
+                        
+                        <div class="row">
+                            <div class="col col-80 col-offset-10">
+                                <a class="button button-block icon-right ion-chevron-right button-calm" href="#/history">
+                                    <i class="icon ion-clipboard left"></i>
+                                    <span>Checkup Histories </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-80 col-offset-10">
+                                <a class="button button-block icon-right ion-chevron-right button-calm" href="#/appointmentList">
+                                    <i class="icon ion-calendar"></i>
+                                    <span>Appointment Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <!-- ============= slide chart =========-->
+            <ion-slide>
+                <ion-view>
+                    <ion-content class="padding">
+                        <div ng-repeat='itemtmp in charts|limitTo:(charts.length/2)+1'>
+                            <div class="row responsive-sm">
+                                <div class="col" ng-repeat='item in charts.slice($index*2,($index*2+2))'>
+                                    <h4>{{item.Name}}</h4>
+                                    <div class="div-chart">
+                                        <canvas height="200" class="chart chart-line" data="item.Data" setcolor="colors" labels="item.Labels" legend="true" series="series"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <!-- ============= slide history =========-->
+            <ion-slide>
+                <ion-view>
+                    <ion-content class="padding">
+                        <div class="list pull-left" ng-repeat="item in chkPEs">
+                            <div class="list card">
+                                <div class="item item-avatar">
+                                    <div class="icon-avatar">
+                                        <i class="icon ion-clipboard"></i>
+                                    </div>
+                                    <h2>{{item.Type}}</h2>
+                                </div>
+                                <div class="item item-body">
+                                    <div class="row" ng-repeat="pes in item.PE">
+                                        <p>{{pes}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-slide>
+            <!-- ============= slide summary =========-->
+            <ion-slide>
+                <ion-tabs class="tabs-icon-top tabs-calm">
+                    <!-- Home Tab -->
+                    <ion-tab title="Summary" icon="icon ion-clipboard">
+                        <ion-view>
+                            <ion-content class="padding">
+                                <div class="list pull-left" ng-repeat="Sum in ChkSummarys">
+                                    <div class="list card">
+                                        <div class="item item-avatar">
+                                            <img ng-src="http://203.155.165.20/healthbookP2/images/{{Data.DoctorCode}}.png">
+                                            <h2>Summary (สรุปผลการตรวจสุขภาพ)</h2>
+                                            <p>Date : {{Data.OpenVisitDate}}</p>
+                                        </div>
+                                        <div class="item item-body">
+                                            <div class="row">
+                                                <pre>{{Sum.RemarksMemo}}</pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-content>
+                        </ion-view>
+                    </ion-tab>
+                    <!-- Friends Tab -->
+                    <!-- Account Tab -->
+                    <ion-tab title="VitalSign" icon="icon ion-heart">
+                        <ion-view>
+                            <ion-content class="padding">
+                                <div class="pull-left" >
+                                    <div class="item item-avatar">
+                                <div class="icon-avatar">
+                                    <i class="icon ion-heart"></i>
+                                </div>
+                                <h2>Vital Sign</h2>
+                            </div>
+
+                            <div class="item item-body">
+                                
+                                    <p>
+                                        Weight : {{VitalSigns.weight}} kg.&nbsp;&nbsp;&nbsp;&nbsp;Height : 155 cm.&nbsp;&nbsp;&nbsp;&nbsp;BMI : {{VitalSigns.bmi}}
+                                    </p>
+
+                                
+                            </div>
+                            <div class="item item-body">
+                                
+                                    <p>
+                                        Temp : {{VitalSigns.temp}}&nbsp;&nbsp;&nbsp;&nbsp;BP : {{VitalSigns.bp}}/90&nbsp;&nbsp;&nbsp;&nbsp;Pulse : {{VitalSigns.pulse}}&nbsp;&nbsp;&nbsp;&nbsp;RR : {{VitalSigns.rr}}
+                                    </p>
+
+                                
+                            </div>
+
+                                </div>
+                                </div>
+                            </ion-content>
+                        </ion-view>
+                    </ion-tab>
+                    <!-- Account Tab -->
+                    <ion-tab title="Lab" icon="icon ion-beaker">
+                        <ion-view>
+                            <ion-content class="padding">
+                                <div class="list pull-left" ng-repeat="Lab in ChkLabs">
+                                    <a class="item item-avatar" href="#/labDetail/{{Lab.Order}}">
+                                        <div class="icon-avatar">
+                                            <i class="icon ion-beaker"></i>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col col-100">
+                                                <h2>{{Lab.Order}}</h2></div>
+                                            <i class="icon ion-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                </div>
+                            </ion-content>
+                        </ion-view>
+                    </ion-tab>
+                    <!-- Account Tab -->
+                    <ion-tab title="X-Ray" icon="icon ion-nuclear">
+                        <ion-view>
+                            <ion-content class="padding">
+                                <div class="list pull-left" ng-repeat="Xray in ChkXrays">
+                                    <div class="list card">
+                                        <div class="item item-avatar">
+                                            <div class="icon-avatar">
+                                                <i class="icon ion-nuclear"></i>
+                                            </div>
+                                            <h2>{{Xray.XrayName}}</h2>
+                                            <p>Result Date : {{Xray.ResultDateTime}}</p>
+                                        </div>
+                                        <div class="item item-body">
+                                            <p>
+                                                Result:
+                                            </p>
+                                            <a class="item-a" href="#/xrayDetail/{{Xray.RequestNo}}">
+                                                <div class="row">
+                                                    <div class="col col-100">
+                                                        {{Xray.ResultMemo}}
+                                                    </div>
+                                                    <div class="col col-10 center"><i class="icon ion-chevron-right center"></i></div>
+                                                </div>
+                                            </a>
+                                            <p>
+                                                {{Xray.ResultDoctor}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ion-content>
+                        </ion-view>
+                    </ion-tab>
+                </ion-tabs>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

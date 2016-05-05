@@ -1,0 +1,31 @@
+<ion-view title="Follow up">
+  <ion-content class="has-header"> 
+      <div class="card">
+
+          <div class="item item-avatar">
+              <div class="icon-avatar">
+                  <i class="icon ion-clock"></i>
+              </div>
+              <h2>{{appointmentDetail.DoctorName}}</h2>
+              <p>Date : {{appointmentDetail.AppointDateTime}}</p>
+              <p>Clinic : {{appointmentDetail.ClinicName}}</p>
+          </div>
+
+          <div class="item item-body">
+
+              <p>{{appointmentDetail.Procedure1}}</p>
+              <p>{{appointmentDetail.Procedure2}}</p>
+              <p>{{appointmentDetail.Procedure3}}</p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+
+              <a class="tab-item">
+                  <i class="icon ion-share"></i> Share
+              </a>
+          </div>
+
+      </div>
+  </ion-content>
+    
+</ion-view>

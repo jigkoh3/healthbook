@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <div class="bar bar-header bar-calm">
+        <div class="h1 title">Profile</div>
+        <button class="button button-clear ion-ios-close-empty icon" ng-click="closeProfile()"> </button>
+    </div>
+    <ion-content class="has-header">
+        <form>
+            <div class="list">
+                <label class="item item-input">
+                    <div class="div-center">
+                        <img ng-src="data:image/JPEG;base64,{{data.Photo}}" height="74" style="border-radius: 50%;">
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.firstName}} :</span>
+                    <span class="input-label">{{data.Name}}</span>
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.age}} :</span>
+                    <span class="input-label">{{data.AgeYear}}</span>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.lastdate}} :</span>
+                    <span class="input-label">{{data.LastVisitDate}}</span>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.phoneNo}} :</span>
+                    <span class="input-label item-text-wrap">{{data.Tel}}</span>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label balanced">{{label.HN}} :</span>
+                    <span class="input-label">{{data.HN}}</span>
+                </label>
+                <label class="item">
+                    <button class="button button-block button-calm" type="submit">Reset Password</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
